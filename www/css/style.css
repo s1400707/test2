@@ -1,0 +1,172 @@
+div.currentInstallation {
+    margin: 0 auto; 
+}
+
+table.installationData {
+    border-collapse: collapse;
+	text-align: center;
+	line-height: 1.2;
+    margin: 0 auto; 
+}
+table.installationData th {
+	width: 25%;
+	padding: 10px;
+	font-weight: bold;
+	vertical-align: top;
+	border: 1px solid #ccc;
+}
+table.installationData td {
+	width: 75%;
+	padding: 10px;
+	vertical-align: top;
+	border: 1px solid #ccc;
+    overflow-x: auto;
+}
+
+/*ボタンサイズ*/
+.btn{
+   display: inline-block;
+   color:#FFF;
+    width: 30%;
+    height: 20%;
+    line-height: 15vw;
+    border-radius: 10%;
+    text-align: center;
+    font-size:4vw;
+    vertical-align: middle;
+    overflow: hidden;  
+    margin-top: 2vh;
+    margin-left:1vw;
+    margin-right:1vw;
+    margin-bottom:1vh;
+    background-color:#f18254;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+    border-bottom: solid 3px #bd6565;
+}
+
+/*ツールバー*/
+.toolbar{
+  background-color:#54C3F1;
+}
+
+
+/*カルーセルサイズ*/
+.cal{
+    height: 35vh;
+    width: 100%;
+    text-align: center;
+    border: solid 4px #f18254;
+    background-color:#FFF;
+    font-size: 3vh;
+     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+    border-bottom: solid 3px #bd6565;
+}
+
+.map{
+    width: 100%;
+    height: 80vh;
+}
+
+/*ボタンサイズ*/
+.button1{
+    font-size:100%;
+    width:25%;
+    height:5vh;
+     font-weight: bold;
+      margin-bottom: 3vw;
+}
+
+/*画像サイズ調整*/
+.contain{
+ object-fit: contain;
+ width: 50vw;
+ height: 50vh;
+}
+
+/*詳細画像サイズ調整*/
+.detailImage{
+  object-fit: contain;
+  width: 100%;
+  background-color: #cfc;
+  border: 1px solid #cff;
+  display: block;
+ margin-left: auto;
+ margin-right: auto;
+}
+
+/*カルーセル画像*/
+.calImage{
+ object-fit: cover;
+  width: 100%;
+ height: 75%; 
+   text-align: center;
+   display: block;
+}
+
+/* マーカーチェックボックス */
+input[type=checkbox] {
+	display: none;
+}
+input[type="checkbox"].checkbox02:checked + label {
+	background: #31A9EE;
+	color: #ffffff;
+}
+.check_label:hover {
+	background-color: #E2EDF9;
+}
+
+.check_label {
+display: block;
+	float: left;
+	margin: 2%;
+	width: 40%;
+	height: 8vh;
+	text-align: center;
+	line-height: 8vh;
+	padding-left: 1%;
+	padding-right: 1%;
+	cursor: pointer;
+	color: #31A9EE;
+	border: 1px solid #006DD9;
+} 
+
+
+/*詳細画面detail文章調整*/
+pre {
+    overflow: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.tabbar {
+    /*height: 49px デフォルト*/
+    height: 9vh ;
+}
+.tabbar__button {
+    /*height: 49px デフォルト*/
+    height: 9vh ;
+}
+
+
+/*トップページヘッダ*/
+.header{
+  background-image: url('../img/natori.jpg');
+  background-size:cover;
+  width: 100%;
+  height: 15vh;
+  text-align:center;
+  object-fit:cover;
+}
+
+/*カルーセル背景*/
+.calBack{
+  background-image:url('../img/b119.jpg');
+  height:40vh;
+}
+
+.listItem{
+  width:100%;
+  height:auto;
+}
+
+

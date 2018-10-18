@@ -1,0 +1,45 @@
+<ons-page id="main-page" >
+   
+    <ons-toolbar class="toolbar">
+        <div class="center" >トップページ</div>
+        <div class="left">
+            <ons-toolbar-button onclick="fn.open()" >
+                <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+
+    <div class="header">
+    <!-- <img src=""/>-->
+    </div>
+
+    <!--カルーセル-->
+    <ons-carousel swipeable overscrollable auto-scroll auto-scroll-ratio="0.0"  var="carousel" class="calBack" >
+        ニュース<div id = "newsItems"></div> <!-- アイテムをjavascriptでかける-->
+    </ons-carousel>
+    
+    <!--メニューボタン-->
+        <div>
+            <ons-button onclick="fn.load('map.html')" class="btn">
+                <ons-icon icon="ion-android-map" size="100%"></ons-icon>
+                観光MAP
+            </ons-button>
+            <ons-button onclick="fn.load('coupon.html')" class="btn">
+                <ons-icon icon="ion-ios-pricetags" size="100%"></ons-icon>
+                クーポン
+            </ons-button>
+            <ons-button onclick="fn.load('event.html')" class="btn">
+                <ons-icon icon="fa-calendar-o" size="100%"></ons-icon>
+                イベント    
+            </ons-button>
+            <ons-button onclick="CheckMove('http://www.city.natori.miyagi.jp/bunya/introduction/access','名取市ホームページ')" class="btn">
+                <ons-icon icon="ion-android-subway" size="100%"></ons-icon>
+                アクセス
+            </ons-button>
+            <ons-button onclick="CheckMove('http://www.jma.go.jp/jp/week/312.html','気象庁ホームページ')" class="btn">
+                <ons-icon icon="ion-cloud" size="100%"></ons-icon>
+                天気
+            </ons-button>
+        </div>
+
+</ons-page>

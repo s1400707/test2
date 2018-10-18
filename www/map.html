@@ -1,0 +1,25 @@
+<ons-page id="map-page">
+
+    <ons-toolbar class="toolbar">
+        <div class="center">マップ</div>
+        <div class="left">
+            <ons-toolbar-button onclick="fn.open()" >
+               <ons-icon icon="ion-navicon, material:md-menu" class="navicon"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+        <div class="right" >
+          <ons-toolbar-button onclick="fn.load('map.html')" >更新</ons-toolbar-button>
+        </div>      
+    </ons-toolbar>    
+
+    <ons-tabbar position="bottom">       
+      <ons-tab id="tracking_btn" modifier="large" onclick ="tracking()">表示切替</ons-tab>
+      <ons-tab><img id="compass" src="img/arrow.png"></ons-tab>
+      <ons-tab  id="tracking_mode"> 現在地非表示</ons-tab>
+      <ons-tab onclick="showDialog()" ><ons-icon icon="ion-search"></ons-icon></ons-tab>
+    </ons-tabbar>   
+              
+  <!--地図表示部-->
+    <p><div id="canvas" class="map"></div></p>
+
+</ons-page> 

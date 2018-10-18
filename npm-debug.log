@@ -1,0 +1,44 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/opt/node-v8.11.4/bin/node',
+1 verbose cli   '/project/node_modules/.bin/npm',
+1 verbose cli   'run',
+1 verbose cli   'dev' ]
+2 info using npm@2.15.12
+3 info using node@v8.11.4
+4 warn invalid config loglevel="notice"
+5 verbose run-script [ 'predev', 'dev', 'postdev' ]
+6 info predev NATORIST@
+7 info dev NATORIST@
+8 verbose unsafe-perm in lifecycle true
+9 info NATORIST@ Failed to exec dev script
+10 verbose stack Error: NATORIST@ dev: `browser-sync start -s www/ --watch --port 8080 --ui-port 8081`
+10 verbose stack Exit status 1
+10 verbose stack     at EventEmitter.<anonymous> (/project/node_modules/npm/lib/utils/lifecycle.js:217:16)
+10 verbose stack     at emitTwo (events.js:126:13)
+10 verbose stack     at EventEmitter.emit (events.js:214:7)
+10 verbose stack     at ChildProcess.<anonymous> (/project/node_modules/npm/lib/utils/spawn.js:24:14)
+10 verbose stack     at emitTwo (events.js:126:13)
+10 verbose stack     at ChildProcess.emit (events.js:214:7)
+10 verbose stack     at maybeClose (internal/child_process.js:925:16)
+10 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+11 verbose pkgid NATORIST@
+12 verbose cwd /project
+13 error Linux 4.9.0-4-amd64
+14 error argv "/opt/node-v8.11.4/bin/node" "/project/node_modules/.bin/npm" "run" "dev"
+15 error node v8.11.4
+16 error npm  v2.15.12
+17 error code ELIFECYCLE
+18 error NATORIST@ dev: `browser-sync start -s www/ --watch --port 8080 --ui-port 8081`
+18 error Exit status 1
+19 error Failed at the NATORIST@ dev script 'browser-sync start -s www/ --watch --port 8080 --ui-port 8081'.
+19 error This is most likely a problem with the NATORIST package,
+19 error not with npm itself.
+19 error Tell the author that this fails on your system:
+19 error     browser-sync start -s www/ --watch --port 8080 --ui-port 8081
+19 error You can get information on how to open an issue for this project with:
+19 error     npm bugs NATORIST
+19 error Or if that isn't available, you can get their info via:
+19 error
+19 error     npm owner ls NATORIST
+19 error There is likely additional logging output above.
+20 verbose exit [ 1, true ]
