@@ -11,10 +11,6 @@ var e_geo;
 
   $(window).load(function(){
   var  today=getDay();　//日付取得
-//  var c_objectId1=[]; //リスト表示時のCoupon_listのobjectId保存
-//  var c_name=[];
-//  var value=0; 
-//  var c_limit=[];       //取得したクーポン使用回数
   var dbName='Coupon_List';
    var ncmbTimer = setInterval(function() {
   window.NCMB.monaca.getInstallationId(function(id) {
@@ -35,9 +31,6 @@ for (var  i= 0; i< results.length; i++) {
       var j=i;
      var result=results[j];
 
-     // c_objectId1[j]=result.get("objectId");
-    //  c_name[j]=result.get("name");
-      //value = result.get("limit");
   var myCoupon = ncmb.DataStore("Coupon_Record");
   var mycoupon=new myCoupon();
           //データがあるか判別
@@ -467,11 +460,6 @@ function searchInfo(dbName,listId){
 //入欄初期化
  document.getElementById(listId).innerHTML= '';
 
-//  if(searchName==''){
-//   // console.log("kuku");
-//     document.getElementById(listId).innerHTML= '';
-//    return;
-//  }
   events .lessThanOrEqualTo("startDate",today)
   .greaterThanOrEqualTo("endDate",today)
   .regularExpressionTo("name", searchName)
