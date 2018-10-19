@@ -243,13 +243,13 @@ function find_geopoint(checkDataStore){
                     marker.tag = regist_name;
                     switch(checkDataStore){
                       case 'Coupon_List':
-                         marker.tag += '<button onclick="onClickItem('+"'"+result.get("link")+"'"+','+"'"+checkDataStore+"'"+','+"'"+result.get("objectId")+"'"+')">詳しく</button>';
+                         marker.tag += '<button class="button1" onclick="onClickItem('+"'"+result.get("link")+"'"+','+"'"+checkDataStore+"'"+','+"'"+result.get("objectId")+"'"+')">詳しく</button>';
                       break;
                       case 'Event_List':
-                         marker.tag += '<button onclick="onClickItem('+"'"+result.get("link")+"'"+','+"'"+checkDataStore+"'"+','+"'"+result.get("objectId")+"'"+')">詳しく</button>';
+                         marker.tag += '<button class="button1" onclick="onClickItem('+"'"+result.get("link")+"'"+','+"'"+checkDataStore+"'"+','+"'"+result.get("objectId")+"'"+')">詳しく</button>';
                      break;
                       default:
-                       marker.tag += '<button onclick="onClickItem('+"'"+result.get("link")+"'"+','+"'"+checkDataStore+"'"+','+"''"+')" >詳しく</button>';
+                       marker.tag += '<button class="button1" onclick="onClickItem('+"'"+result.get("link")+"'"+','+"'"+checkDataStore+"'"+','+"''"+')" >詳しく</button>';
                     break;
                     }
                     // マーカーをタップした際にポップアップを表示
@@ -259,7 +259,7 @@ function find_geopoint(checkDataStore){
                      // ポップアップを作成
                      popup = new OpenLayers.Popup("chicken",
                      event.object.lonlat,
-                     new OpenLayers.Size(100,60),
+                     new OpenLayers.Size(200,60),
                      event.object.tag,
                      true);
                      // 作成したポップアップを地図に追加
@@ -312,7 +312,7 @@ function find_eventpoint(checkDataStore,e_name){
                     //マーカー名と詳細ボタンをポップアップで表示
                     marker.tag = regist_name;
       
-                   marker.tag += '<button onclick="onClickItem('+"'"+result.get("link")+"'"+','+"'"+checkDataStore+"'"+','+"''"+')">詳しく</button>';
+                   marker.tag += '<button class="button1"  onclick="onClickItem('+"'"+result.get("link")+"'"+','+"'"+checkDataStore+"'"+','+"''"+')">詳しく</button>';
                     // マーカーをタップした際にポップアップを表示
                     marker.events.register("touchstart", marker, function(event) {
                      // すでに別なポップアップが開いていたら消す
@@ -320,7 +320,7 @@ function find_eventpoint(checkDataStore,e_name){
                      // ポップアップを作成
                      popup = new OpenLayers.Popup("chicken",
                      event.object.lonlat,
-                     new OpenLayers.Size(100,60),
+                     new OpenLayers.Size(200,60),
                      event.object.tag,
                      true);
                      // 作成したポップアップを地図に追加
@@ -373,7 +373,7 @@ function find_couponpoint(checkDataStore){
                     //マーカー名と詳細ボタンをポップアップで表示
                     marker.tag = regist_name;
                  
-                    marker.tag += '<button onclick="onClickItem('+"'"+result.get("link")+"'"+','+"'"+checkDataStore+"'"+','+"'"+result.get("couponId")+"'"+')">詳しく</button>';
+                    marker.tag += '<button class="button1" onclick="onClickItem('+"'"+result.get("link")+"'"+','+"'"+checkDataStore+"'"+','+"'"+result.get("couponId")+"'"+')">詳しく</button>';
                      
                     // マーカーをタップした際にポップアップを表示
                     marker.events.register("touchstart", marker, function(event) {
@@ -382,7 +382,7 @@ function find_couponpoint(checkDataStore){
                      // ポップアップを作成
                      popup = new OpenLayers.Popup("chicken",
                      event.object.lonlat,
-                     new OpenLayers.Size(100,60),
+                     new OpenLayers.Size(200,60),
                      event.object.tag,
                      true);
                      // 作成したポップアップを地図に追加

@@ -4,6 +4,7 @@ var userid='';             //installationのobjectId
 var showCoupon;  //ダイアログに表示するdetail保存
 var e_name;
 var e_geo;
+var c_geo;
 
   $(window).load(function(){
   var  today=getDay();　//日付取得
@@ -282,6 +283,7 @@ function onClickItem(itemLink,dbName,objectId){
             case "Coupon_Record":
              c_objectId2=objectId;
              showCoupon=results[0].get("detail");
+             c_geo=results[0].get("geo");
             break;
             case "Event_List":
              e_name=results[0].get("name");
@@ -421,15 +423,20 @@ function couponDialog(){
 	}
 }
 
-function showMap(){
+function showMap(dbName){
+  console.log(dbName);
   	if(window.confirm('地図を開きますか？')){
-     // var event=ncmb.dataStore("Event_List");
-        checkDataStore='Event_Map';
+        checkDataStore=dbName;
         NatNavi.popPage();
           fn.load('map.html');
   var countup = function(){
+    if(dbName=='Coupon_Record'){
+       find_couponpoint(checkDataStore);
+       eventmap(c_geo.longitude,c_geo.latitude);
+    }else{
        find_eventpoint(checkDataStore,e_name);
-        eventmap(e_geo.longitude,e_geo.latitude);
+       eventmap(e_geo.longitude,e_geo.latitude);
+    }
   } 
   setTimeout(countup, 1000);
     }	else{

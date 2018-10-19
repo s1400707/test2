@@ -69,8 +69,8 @@ table.installationData td {
 
 /*ボタンサイズ*/
 .button1{
-    font-size:100%;
-    width:25%;
+    font-size:80%;
+    width:30%;
     height:5vh;
      font-weight: bold;
       margin-bottom: 3vw;
