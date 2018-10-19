@@ -1,18 +1,15 @@
 var reader;
-//var c_objectId1=[]; //リスト表示時のCoupon_listのobjectId保存
 var c_objectId2       //詳細画面のobjectId
 var userid='';             //installationのobjectId
- // var c_limit=[];       //取得したクーポン使用回数
 var showCoupon;  //ダイアログに表示するdetail保存
 var e_name;
 var e_geo;
-//var c_name2;
-
 
   $(window).load(function(){
   var  today=getDay();　//日付取得
   var dbName='Coupon_List';
-   var ncmbTimer = setInterval(function() {
+  var items ='';
+  var ncmbTimer = setInterval(function() {
   window.NCMB.monaca.getInstallationId(function(id) {
     if (id) {
       clearInterval(ncmbTimer);
@@ -20,53 +17,49 @@ var e_geo;
       userid=id;
       console.log(userid);
       //開始期間、終了期間と比較
-  var events = ncmb.DataStore(dbName);
-  events .lessThanOrEqualTo("startDate",today)
-  .greaterThanOrEqualTo("endDate",today)
-  .fetchAll() 
- .then(function(results){
-    var items ='';
-for (var  i= 0; i< results.length; i++) {
-    (function() {
-      var j=i;
-     var result=results[j];
+      var events = ncmb.DataStore(dbName);
+      events .lessThanOrEqualTo("startDate",today)
+      .greaterThanOrEqualTo("endDate",today)
+     .fetchAll() 
+      .then(function(results){
+       for (var  i= 0; i< results.length; i++) {
+        (function() {
+          var j=i;
+         var result=results[j];
 
-  var myCoupon = ncmb.DataStore("Coupon_Record");
-  var mycoupon=new myCoupon();
-          //データがあるか判別
-         myCoupon.equalTo("deviceId",userid)
-                        .equalTo("couponId",result.get("objectId"))
-                        .count()
-                        .fetchAll()
-                        .then(function(results1){
-                          if(results1.count==0){　　//１つもない
-                           mycoupon.set("deviceId",userid)
-                                         .set("couponId",result.get("objectId"))
-                                         .set("name",result.get("name"))
-                                         .set("limit",result.get("limit"))
-                                         .set("startDate",result.get("startDate"))
-                                         .set("endDate",result.get("endDate"))
-                                         .set("geo",result.get("geo"))
-                                         .set("link",result.get("link"))
-                                         .save()        
-                          }
-                        
-        })
-        .catch(function(err){
-          console.log(err) // エラー処理
-        });  
-           })();  
-           } 
- })
-                        .catch(function(err){
-                          console.log(err) // エラー処理
-                        });   
+          var myCoupon = ncmb.DataStore("Coupon_Record");
+          var mycoupon=new myCoupon();
+              //データがあるか判別
+            myCoupon.equalTo("deviceId",userid)
+                           .equalTo("couponId",result.get("objectId"))
+                           .count()
+                            .fetchAll()
+                            .then(function(results1){
+                              if(results1.count==0){　　//１つもない
+                               mycoupon.set("deviceId",userid)
+                                            .set("couponId",result.get("objectId"))
+                                            .set("name",result.get("name"))
+                                            .set("limit",result.get("limit"))
+                                            .set("startDate",result.get("startDate"))
+                                            .set("endDate",result.get("endDate"))
+                                            .set("geo",result.get("geo"))
+                                            .set("link",result.get("link"))
+                                            .save()        
+                             }                     
+                            })
+                           .catch(function(err){
+                              console.log(err) // エラー処理
+                           });  
+          })();  
+        } 
+     })
+     .catch(function(err){
+        console.log(err) // エラー処理
+      });   
     }
   });
 }, 1000);
-
-　  
-    });
+});
   
 
 document.addEventListener('init', function(event) {
@@ -459,6 +452,9 @@ function searchInfo(dbName,listId){
 
 //入欄初期化
  document.getElementById(listId).innerHTML= '';
+ if(searchName==''){
+   return;
+ }
 
   events .lessThanOrEqualTo("startDate",today)
   .greaterThanOrEqualTo("endDate",today)
