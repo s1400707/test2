@@ -241,17 +241,17 @@ function find_geopoint(checkDataStore){
                     
                     //マーカー名と詳細ボタンをポップアップで表示
                     marker.tag = regist_name;
-                    switch(checkDataStore){
-                      case 'Coupon_List':
-                         marker.tag += '<button class="button1" onclick="onClickItem('+"'"+result.get("link")+"'"+','+"'"+checkDataStore+"'"+','+"'"+result.get("objectId")+"'"+')">詳しく</button>';
-                      break;
-                      case 'Event_List':
-                         marker.tag += '<button class="button1" onclick="onClickItem('+"'"+result.get("link")+"'"+','+"'"+checkDataStore+"'"+','+"'"+result.get("objectId")+"'"+')">詳しく</button>';
-                     break;
-                      default:
+                    // switch(checkDataStore){
+                      // case 'Coupon_List':
+                      //    marker.tag += '<button class="button1" onclick="onClickItem('+"'"+result.get("link")+"'"+','+"'"+checkDataStore+"'"+','+"'"+result.get("objectId")+"'"+')">詳しく</button>';
+                      // break;
+                    //   case 'Event_List':
+                    //      marker.tag += '<button class="button1" onclick="onClickItem('+"'"+result.get("link")+"'"+','+"'"+checkDataStore+"'"+','+"'"+result.get("objectId")+"'"+')">詳しく</button>';
+                    //  break;
+                    //  default:
                        marker.tag += '<button class="button1" onclick="onClickItem('+"'"+result.get("link")+"'"+','+"'"+checkDataStore+"'"+','+"''"+')" >詳しく</button>';
-                    break;
-                    }
+               //     break;
+                //    }
                     // マーカーをタップした際にポップアップを表示
                     marker.events.register("touchstart", marker, function(event) {
                      // すでに別なポップアップが開いていたら消す
@@ -373,7 +373,7 @@ function find_couponpoint(checkDataStore){
                     //マーカー名と詳細ボタンをポップアップで表示
                     marker.tag = regist_name;
                  
-                    marker.tag += '<button class="button1" onclick="onClickItem('+"'"+result.get("link")+"'"+','+"'"+checkDataStore+"'"+','+"'"+result.get("couponId")+"'"+')">詳しく</button>';
+                    marker.tag += '<div><button class="button1" onclick="onClickItem('+"'"+result.get("link")+"'"+','+"'"+checkDataStore+"'"+','+"'"+result.get("couponId")+"'"+')">詳しく</button></div>';
                      
                     // マーカーをタップした際にポップアップを表示
                     marker.events.register("touchstart", marker, function(event) {
@@ -382,7 +382,7 @@ function find_couponpoint(checkDataStore){
                      // ポップアップを作成
                      popup = new OpenLayers.Popup("chicken",
                      event.object.lonlat,
-                     new OpenLayers.Size(200,60),
+                     new OpenLayers.Size(160,80),
                      event.object.tag,
                      true);
                      // 作成したポップアップを地図に追加
