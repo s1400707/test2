@@ -347,7 +347,7 @@ function loadNews(pic,reader){
 //外部ページに移動するか判別
 function CheckMove(url,title) {
     if( confirm(title+"を開きます") ) {
-        window.open(url, '_system', 'location=yes');
+       var ref= cordova.InAppBrowser.open(url, '_blank', 'location=yes');
     }
 }
 

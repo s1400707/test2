@@ -7,6 +7,7 @@
   <allow-navigation href="*"/>
   <allow-intent href="itms:*"/>
   <allow-intent href="itms-apps:*"/>
+  <preference name="android-minSdkVersion" value="19"/>
   <preference name="loglevel" value="DEBUG"/>
   <preference name="AndroidLaunchMode" value="singleTop"/>
   <preference name="ErrorUrl" value=""/>

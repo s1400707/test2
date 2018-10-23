@@ -16,7 +16,7 @@ function twitText() {
 		    //投稿画面を開く
 		    url = "http://twitter.com/share?text=" + s;
          if( confirm("Twitterを開きます") ) {
-		    window.open(url,"_system","width=600,height=300");
+		     var ref= cordova.InAppBrowser.open(url, '_blank', 'location=yes');
          }
         }
     }
@@ -35,7 +35,7 @@ function lineText() {
 		    //投稿画面を開く
 		    url = "http://line.me/R/msg/text/" + s;
           if( confirm("LINEを開きます") ) {
-		    window.open(url,"_system", 'location=yes');
+		 var ref= cordova.InAppBrowser.open(url, '_blank', 'location=yes');
           }
         }
     }
